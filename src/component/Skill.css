@@ -1,0 +1,45 @@
+:root{
+  --bg-color: #080808; 
+   --text-color: #ffffff;
+  --main-color: #00ffee;
+} 
+.main-SkillChart{
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+.heading{
+  font-weight: 700;
+  margin-bottom: 40px;
+  margin-top: 80px;
+  /* border-bottom: 5px solid #fff; */
+}
+.skill-bar .progress {
+    height: 10px;
+    background-color: #1a1a1a;
+  }
+  
+  .skill-bar .progress-bar {
+    background-color: #00ffee;
+  }
+  /* .circular-progress {
+    width: 120px;
+  } */
+/* .circlediv{
+  display: flex;
+  flex-direction: row;
+  background-color: #17b817;
+}   */
+
+.SkillChart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.ProfessionSkill{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* gap: 40px; */
+    /* flex-direction: ; */
+   }

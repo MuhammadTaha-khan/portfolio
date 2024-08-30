@@ -1,0 +1,213 @@
+/* *{
+    margin: 0;
+} */
+:root{
+    --bg-color: #080808; 
+     --text-color: #ffffff;
+    --main-color: #00ffee;
+} 
+.main-home{
+    background-color: var(--bg-color);
+}
+.Home{
+    display: flex;
+    flex-direction: row;
+    color: var(--text-color);
+}
+
+.home-left{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.home-left h1{
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.sec-para{
+    /* color: #74777b; */
+    font-size: 18px;
+    line-height: 30px;
+}
+.icon svg {
+    font-size: 40px;
+    margin-bottom: 10px;
+    border: 2px solid #00ffee;
+    color: #00ffee;
+    border-radius: 50%;
+    padding: 5px;
+    cursor:pointer;
+}
+.icon-two{
+    margin-left: 20px;
+}
+.icon-three{
+    margin-left: 20px;
+}
+.btn{
+    margin-left: -10px;
+    display: flex !important; /* Force flex display */
+    flex-direction: row !important; /* Force row direction */
+}
+
+#second-btn{
+    margin-left: 20px;
+}
+
+/* ----------------------------------Text Animation--------------------------------- */
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span{
+    position: relative;
+}
+
+.text-animation span::before{
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "React developer";
+    }
+    21%, 40%{
+        content: "Web Developer";
+        
+    }
+    41%, 60%{
+        content: "React developer";
+    }
+    61%, 80%{
+        content: "Web Developer"; 
+    }
+    81%, 100%{
+        content: "React developer";
+    }
+}
+
+@keyframes typing{
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px);
+    }
+}
+
+/* -----------------------------------------------Button Styles--------------------- */
+.button {
+    --color: #00ffee;
+    padding: 0.4em 1.0em;
+    background-color: transparent;
+    border-radius: 1.3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+
+.button::before, .button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 2s ease;
+}
+
+.button::before {
+    top: -1em;
+    left: -1em;
+}
+
+.button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.button:hover::before, .button:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.button:hover {
+    color: var(--text-color);
+    font-weight: bold;
+    
+}
+
+.button:active {
+    filter: brightness(.8);
+}
+/* --------------------------------------image------------------------------------------ */
+.profile-image{
+    margin-top: 100px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+.profile-image img {
+    box-shadow: 10px 35px 100px #00ffee;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    .Home {
+      flex-direction: column;
+    }
+  
+    .home-left, .profile-image {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .profile-image {
+      margin-top: 0px;
+      height: 30vh;
+    }
+  }
+
+
+  
+
+  

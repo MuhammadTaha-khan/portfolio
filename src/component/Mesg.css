@@ -1,0 +1,189 @@
+:root{
+  --bg-color: #080808;
+  --text-color: #ffffff;
+  --main-color: #00ffee;
+} 
+.msg-section {
+    background-color: var(--bg-color);
+    padding: 50px 0;
+    color: white;
+  }
+
+  .msg-heading{
+    font-weight: 800;
+    margin-bottom: 50px;
+  }
+.mesg{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.msg-card-right {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    color: #fff;
+    /* border: 1px solid #1a1a1a; */
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    /* color: #00bfff; */
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .title::before,
+  .title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    /* background-color: #00bfff; */
+  }
+  
+  .message, 
+  .signin {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    background-color: #1a1a1a;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    /* border: 1px solid rgba(105, 105, 105, 0.397); */
+    border: 1px solid #00ffee;
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,
+  .form label .input:valid + span {
+    color: rgba(255, 255, 255, 0.7);
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .input {
+    font-size: medium;
+  }
+  /* ---------------------------------------button------------------------------------ */
+  .con-button {
+    --color: #00ffee;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+   }
+   
+   .con-button::before, .con-button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+   }
+   
+   .con-button::before {
+    top: -1em;
+    left: -1em;
+   }
+   
+   .con-button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+   }
+   
+   .con-button:hover::before, .con-button:hover::after {
+    height: 410px;
+    width: 410px;
+   }
+   
+   .con-button:hover {
+    color: rgb(10, 25, 30);
+   }
+   
+   .con-button:active {
+    filter: brightness(.8);
+   }
+  

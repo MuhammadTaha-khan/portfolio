@@ -1,0 +1,38 @@
+:root{
+  --bg-color: #080808;
+  --text-color: #ffffff;
+  --main-color: #00ffee;
+} 
+.responce-section {
+    background-color: var(--bg-color);
+    padding: 50px 0;
+    color: white;
+  }
+  .service-heading{
+    font-weight: 800;
+  }
+  .testimonial-car {
+    background-color: #1a1a1a;
+    border: 2px solid var(--main-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    text-align: start;
+    transition: all 0.5s;
+  }
+  .testimonial-car:hover {
+    box-shadow: 2px 7px 21px #00ffee;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .testimonial-card h4{
+    margin-left: 10px;
+    font-weight: 100;
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-car {
+      text-align: center;
+    }
+  }
