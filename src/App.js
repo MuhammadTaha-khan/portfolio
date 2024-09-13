@@ -9,6 +9,7 @@ import Projects from './Projects';
 import Msg from './Msg';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SkillChart from './SkillChart';
+import ContactForm from './Msgtext';
 
 
 function App() {
@@ -65,6 +66,8 @@ const SinglePage = () => {
       <section id="msg">
         <Msg />
       </section>
+      {/* <ContactForm/> */}
+      
 
     </div>
   );

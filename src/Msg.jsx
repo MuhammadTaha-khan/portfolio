@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './component/Mesg.css'
@@ -12,8 +12,36 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Swal from 'sweetalert2'
 
 function Msg() {
+     // Step 1: Initialize state for form values
+     const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneNumber: '',
+        message: ''
+    });
+
+    // Step 2: Handle form field changes
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    // Step 3: Handle form submission
     const onSubmit = async (event) => {
         event.preventDefault();
+                // Check if all fields are filled
+                if (
+                    formData.firstName &&
+                    formData.lastName &&
+                    formData.email &&
+                    formData.phoneNumber &&
+                    formData.message
+                )
+                 {
+                    // Prepare form data for submission
         const formData = new FormData(event.target);
 
         formData.append("access_key", "ba5b6bf0-b3b6-4d69-98d5-4165e562a5aa");
@@ -36,8 +64,27 @@ function Msg() {
                 text: "Message Send Seccessfully",
                 icon: "success"
             });
-        }
-    };
+                            // Reset form
+                            setFormData({
+                                firstName: '',
+                                lastName: '',
+                                email: '',
+                                phoneNumber: '',
+                                message: ''
+                            });
+                        }
+                    } else {
+                        // Show error if fields are missing
+                        Swal.fire({
+                            title: "Error!",
+                            text: "Please fill in all the fields.",
+                            icon: "error"
+                        });
+                    }
+                
+        };
+
+
     return (
         <div className="msg-section">
                 <h1 className='msg-heading'>CONTACT US</h1>
@@ -73,26 +120,65 @@ function Msg() {
                             <form className="form" onSubmit={onSubmit}>
                                 <p className="message">Free contact now and get full access to our app. </p>
                                 <label>
-                                    <input className="input field" type="text" placeholder="First Name" name="name" required="" />
+                                    <input                                         className="input field"
+                                        type="text"
+                                        placeholder="First Name"
+                                        name="firstName"
+                                        value={formData.firstName}
+                                        onChange={handleChange}
+                                        required 
+                                        />
                                     {/* <span>Firstname</span> */}
                                 </label>
 
                                 <label>
-                                    <input className="input field" type="text" placeholder="Last Name" name="Company Name" required="" />
+                                <input
+                                        className="input field"
+                                        type="text"
+                                        placeholder="Last Name"
+                                        name="lastName"
+                                        value={formData.lastName}
+                                        onChange={handleChange}
+                                        required
+                                    />
                                     {/* <span>Company Name</span> */}
                                 </label>
 
                                 <label>
-                                    <input className="input field" type="email" placeholder="Email" name="email" required="" />
+                                <input
+                                        className="input field"
+                                        type="email"
+                                        placeholder="Email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
                                     {/* <span>Email</span> */}
                                 </label>
 
                                 <label>
-                                    <input className="input field" type="password" placeholder="Phone Number" name="Phone Number" required="" />
+                                <input
+                                        className="input field"
+                                        type="text"
+                                        placeholder="Phone Number"
+                                        name="phoneNumber"
+                                        value={formData.phoneNumber}
+                                        onChange={handleChange}
+                                        required
+                                    />
                                     {/* <span>Phone Number</span> */}
                                 </label>
                                 <label>
-                                    <textarea className="input field" type="password" placeholder="Your Message" name="message" required="" rows={3} />
+                                <textarea
+                                        className="input field"
+                                        placeholder="Your Message"
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        required
+                                        rows={3}
+                                    />
                                     {/* <span>Your Message</span> */}
                                 </label>
                                 {/* <button className="submit">Submit</button> */}
